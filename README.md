@@ -89,22 +89,38 @@ file secretrendezvous.docx
 #### Identify senders
 
 ```bash
-zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+Email Sender
+┌──(root㉿kali)-[/home/kali]
+└─# zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c | sort -nr
+      3 192.168.30.108  sneakyg33ky@aol.com
 ```
-#### Identify recipients
+#### Identify recipients IP
 
 ```bash
-zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+┌──(root㉿kali)-[/home/kali]
+└─# zeek-cut id.resp_h < smtp.log | sort | uniq -c | sort -nr
+
+      3 64.12.168.40
 ```
 #### Detect non‑TLS SMTP
 
 ```bash
-zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+┌──(root㉿kali)-[/home/kali]
+└─# zeek-cut id.orig_h mailfrom rcptto tls < smtp.log | grep F
+
+192.168.30.108  sneakyg33ky@aol.com     inter0pt1c@aol.com      F
+192.168.30.108  sneakyg33ky@aol.com     d4rktangent@gmail.com   F
+192.168.30.108  sneakyg33ky@aol.com     mistersekritx@aol.com   F
 ```
 #### Correlate attachments
 
 ```bash
-zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+┌──(root㉿kali)-[/home/kali]
+└─# zeek-cut ts id.orig_h mailfrom rcptto subject < smtp.log | column -t
+
+1305660786.286393  192.168.30.108  sneakyg33ky@aol.com  inter0pt1c@aol.com     need        a     favor
+1305660855.561152  192.168.30.108  sneakyg33ky@aol.com  d4rktangent@gmail.com  lunch       next  week
+1305660916.021405  192.168.30.108  sneakyg33ky@aol.com  mistersekritx@aol.com  rendezvous 
 ```
 
 ---
