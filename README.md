@@ -81,7 +81,7 @@ The attachment was reconstructed by extracting Base64 content from the SMTP DATA
 ### Verification
 ```bash
 file secretrendezvous.docx
-
+```
 ---
 
 ## Zeek Analysis Workflow
