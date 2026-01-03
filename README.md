@@ -9,7 +9,9 @@ Using **Zeek**, **Wireshark**, and manual protocol analysis, the investigation r
 - A DOCX attachment transmitted via SMTP
 - Host attribution (IP, MAC, hostname, OS hints)
 
-The case demonstrates how lack of TLS on SMTP submission leads to **full credential and content disclosure**.
+The pcap is provided in a password-protected archive.
+
+Password: pc@p
 
 ---
 
@@ -34,4 +36,96 @@ The case demonstrates how lack of TLS on SMTP submission leads to **full credent
 - **docx2txt**
 
 ---
->>>>>>> c845565 (README.md)
+
+## Incident Summary
+
+- **Client IP:** `192.168.30.108`
+- **Hostname:** `annlaptop`
+- **MAC Address:** `00:21:70:4d:4f:ae` (Apple OUI)
+- **SMTP Server:** `64.12.168.40:587` (AOL)
+- **Email Client:** Microsoft Outlook Express 6.00.2900.2180
+- **TLS Used:** ❌ No (cleartext)
+
+### Emails Observed
+| Subject | Recipient |
+|------|---------|
+| need a favor | inter0pt1c@aol.com |
+| lunch next week | d4rktangent@gmail.com |
+| rendezvous | mistersekritx@aol.com |
+
+---
+
+## Cleartext Credential Exposure
+
+SMTP authentication occurred using `AUTH LOGIN` without TLS.
+
+### Extracted Credentials (Base64 decoded)
+| Type | Value |
+|---|---|
+| Username | `sneakyg33ky` |
+| Password | `s00pers3kr1t` |
+
+>  This represents a **high‑severity security issue**, as credentials were fully exposed on the network.
+
+---
+
+## Attachment Analysis
+
+- **Filename:** `secretrendezvous.docx`
+- **MIME Type:** `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+- **File UID (Zeek):** `FgtEkt24g0F9SSREe`
+- **Transport:** SMTP (cleartext)
+
+The attachment was reconstructed by extracting Base64 content from the SMTP DATA stream and decoding it.
+
+### Verification
+```bash
+file secretrendezvous.docx
+
+---
+
+## Zeek Analysis Workflow
+
+#### Identify senders
+
+```bash
+zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+```
+#### Identify recipients
+
+```bash
+zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+```
+#### Detect non‑TLS SMTP
+
+```bash
+zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+```
+#### Correlate attachments
+
+```bash
+zeek-cut id.orig_h mailfrom < smtp.log | sort | uniq -c
+```
+
+---
+
+## MITRE ATT&CK Mapping
+
+| Technique | ID |
+|---------|----|
+| Phishing: Attachment | T1566.001 | 
+| Exfiltration Over Unencrypted Channel | T1041 | 
+| Valid Accounts (credential exposure) | T1078 |
+
+---
+
+## Disclaimer
+
+This repository is for educational and defensive security research only.
+All data is analyzed in a controlled lab environment.
+
+
+---
+
+⭐ If you find this analysis useful, consider starring the repository.
+
