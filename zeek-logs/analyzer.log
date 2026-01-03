@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	analyzer
+#open	2026-01-03-01-30-11
+#fields	ts	analyzer_kind	analyzer_name	uid	fuid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	failure_reason	failure_data
+#types	time	string	string	string	string	addr	port	addr	port	enum	string	string
+1305660788.401943	protocol	IMAP	ChKrvR1VfA4ARmjBz	-	192.168.30.108	1685	205.188.58.10	143	tcp	Binpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/imap/imap-protocol.pac:19: \x0aexpected pattern: "[ ]+"\x0aactual data: "\x0d\x0a"	-
+1305660800.590789	protocol	IMAP	CsNcc92dS8sgdu5hah	-	192.168.30.108	1686	205.188.58.10	143	tcp	Binpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/imap/imap-protocol.pac:19: \x0aexpected pattern: "[ ]+"\x0aactual data: "\x0d\x0a"	-
+1305660857.799384	protocol	IMAP	ChGgc93dX8k6uHNHP5	-	192.168.30.108	1688	205.188.58.10	143	tcp	Binpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/imap/imap-protocol.pac:19: \x0aexpected pattern: "[ ]+"\x0aactual data: "\x0d\x0a"	-
+1305660923.827482	protocol	IMAP	CYNlqkCw7TapFwC5j	-	192.168.30.108	1690	205.188.58.10	143	tcp	Binpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/imap/imap-protocol.pac:19: \x0aexpected pattern: "[ ]+"\x0aactual data: "\x0d\x0a"	-
+#close	2026-01-03-01-30-11

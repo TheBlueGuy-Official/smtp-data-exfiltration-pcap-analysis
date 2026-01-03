@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dhcp
+#open	2026-01-03-01-30-11
+#fields	ts	uids	client_addr	server_addr	mac	host_name	client_fqdn	domain	requested_addr	assigned_addr	lease_time	client_message	server_message	msg_types	duration
+#types	time	set[string]	addr	addr	string	string	string	string	addr	addr	interval	string	string	vector[string]	interval
+1305660723.166396	CPfCfyv0qgCBbzoz5,CBznAJ29r6ZAXycNGk	192.168.30.108	192.168.30.10	00:21:70:4d:4f:ae	ann-laptop	ann-laptop.	-	192.168.30.108	192.168.30.108	3600.000000	-	-	REQUEST,REQUEST,REQUEST,ACK	0.000749
+1305660802.167400	CCh2163BbZVidpQwk1	192.168.30.101	192.168.30.10	00:0b:cd:c2:e4:91	dog-ws	dog-ws.	-	-	192.168.30.101	3600.000000	-	-	REQUEST,ACK	0.000496
+1305660827.916312	Cvcqwz2GQe9DyeIwF2	192.168.30.106	192.168.30.10	00:21:9b:eb:83:48	elephant	-	-	-	192.168.30.106	3600.000000	-	-	REQUEST,ACK	0.000499
+1305660947.317431	Cx2gCx1nYyUfmQpH94	192.168.30.102	192.168.30.10	00:12:79:64:f7:18	elephant-ws	elephant-ws.	-	-	192.168.30.102	3600.000000	-	-	REQUEST,ACK	0.000746
+#close	2026-01-03-01-30-11

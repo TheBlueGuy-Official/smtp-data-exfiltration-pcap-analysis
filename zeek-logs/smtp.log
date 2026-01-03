@@ -1,0 +1,12 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	smtp
+#open	2026-01-03-01-30-11
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	helo	mailfrom	rcptto	date	from	to	cc	reply_to	msg_id	in_reply_to	subject	x_originating_ip	first_received	second_received	last_reply	path	user_agent	tls	fuids
+#types	time	string	addr	port	addr	port	count	string	string	set[string]	string	string	set[string]	set[string]	string	string	string	string	addr	string	string	string	vector[addr]	string	bool	vector[string]
+1305660786.286393	CA97QS38DcVIh2QZ6d	192.168.30.108	1684	64.12.168.40	587	1	annlaptop	sneakyg33ky@aol.com	inter0pt1c@aol.com	Tue, 17 May 2011 13:32:17 -0600	"Ann Dercover" <sneakyg33ky@aol.com>	<inter0pt1c@aol.com>	-	-	<00ab01cc14c9$227de600$6b1ea8c0@annlaptop>	-	need a favor	-	-	-	250 2.0.0 Ok: queued as CE12AE0000B0	64.12.168.40,192.168.30.108	Microsoft Outlook Express 6.00.2900.2180	F	FUIGl93Cx3RuVm8Lma,FtnzlB232RHVpV8wJa
+1305660855.561152	CHWbgb1wEkY1Q0kqE5	192.168.30.108	1687	64.12.168.40	587	1	annlaptop	sneakyg33ky@aol.com	d4rktangent@gmail.com	Tue, 17 May 2011 13:33:26 -0600	"Ann Dercover" <sneakyg33ky@aol.com>	<d4rktangent@gmail.com>	-	-	<00b701cc14c9$4bc95710$6b1ea8c0@annlaptop>	-	lunch next week	-	-	-	250 2.0.0 Ok: queued as 1BE16E00012A	64.12.168.40,192.168.30.108	Microsoft Outlook Express 6.00.2900.2180	F	FG1WrM1iLgGdEPt1Ei,FKoN8m23yVdajmEyJi
+1305660916.021405	CMuoD72d75YLD4fJja	192.168.30.108	1689	64.12.168.40	587	1	annlaptop	sneakyg33ky@aol.com	mistersekritx@aol.com	Tue, 17 May 2011 13:34:26 -0600	"Ann Dercover" <sneakyg33ky@aol.com>	<mistersekritx@aol.com>	-	-	<00bc01cc14c9$6fd1bc60$6b1ea8c0@annlaptop>	-	rendezvous	-	-	-	250 2.0.0 Ok: queued as 91607E0000F1	64.12.168.40,192.168.30.108	Microsoft Outlook Express 6.00.2900.2180	F	FjNSLf3Pt8hBCNxTtd,FqVlHVyBtCVgLYWl5,FgtEkt24g0F9SSREe
+#close	2026-01-03-01-30-11
