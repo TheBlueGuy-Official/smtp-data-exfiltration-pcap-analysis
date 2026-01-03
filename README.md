@@ -11,7 +11,7 @@ Using **Zeek**, **Wireshark**, and manual protocol analysis, the investigation r
 
 The pcap is provided in a password-protected archive.
 
-Password: pc@p
+Password: `pc@p`
 
 ---
 
